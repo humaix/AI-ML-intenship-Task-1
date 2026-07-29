@@ -1,0 +1,66 @@
+data:
+  raw_data_path: "data/raw/kidney_disease (1).csv"
+  processed_data_path: "data/processed/kidney_disease_cleaned.csv"
+  target_column: "classification"
+  test_size: 0.2
+  random_state: 42
+
+features:
+  numerical_cols:
+    - "age"
+    - "bp"
+    - "sg"
+    - "al"
+    - "su"
+    - "bgr"
+    - "bu"
+    - "sc"
+    - "sod"
+    - "pot"
+    - "hemo"
+    - "pcv"
+    - "wc"
+    - "rc"
+    - "age_group"
+    - "bgr_hemo_ratio"
+    - "kidney_function_score"
+  categorical_cols:
+    - "rbc"
+    - "pc"
+    - "pcc"
+    - "ba"
+    - "htn"
+    - "dm"
+    - "cad"
+    - "appet"
+    - "pe"
+    - "ane"
+  drop_cols:
+    - "id"
+
+model:
+  model_save_path: "models/kidney_disease_model.joblib"
+  models_to_compare:
+    - "logistic_regression"
+    - "random_forest"
+    - "decision_tree"
+    - "gradient_boosting"
+  cv_folds: 5
+  random_state: 42
+
+hyperparameters:
+  logistic_regression:
+    C: [0.01, 0.1, 1.0, 10.0]
+    solver: ["liblinear", "lbfgs"]
+  random_forest:
+    n_estimators: [50, 100, 200]
+    max_depth: [null, 5, 10, 15]
+    min_samples_split: [2, 5, 10]
+  decision_tree:
+    max_depth: [null, 3, 5, 10]
+    min_samples_split: [2, 5, 10]
+    criterion: ["gini", "entropy"]
+  gradient_boosting:
+    n_estimators: [50, 100, 150]
+    learning_rate: [0.01, 0.05, 0.1, 0.2]
+    max_depth: [3, 4, 5]

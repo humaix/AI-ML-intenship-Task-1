@@ -1,0 +1,43 @@
+{
+    "baseline_models": {
+        "logistic Regression": {
+            "accuracy": 0.9875,
+            "precision": 1.0,
+            "recall": 0.98,
+            "f1_score": 0.98989898989899,
+            "roc_auc": 1.0
+        },
+        "random forest": {
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "roc_auc": 1.0
+        },
+        "decision tree": {
+            "accuracy": 0.975,
+            "precision": 0.98,
+            "recall": 0.98,
+            "f1_score": 0.98,
+            "roc_auc": 0.9733333333333333
+        },
+        "Gradient Boosting": {
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "roc_auc": 1.0
+        }
+    },
+    "best_model": {
+        "name": "random forest",
+        "cv_accuracy": 0.990625,
+        "test_metrics": {
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "roc_auc": 1.0
+        }
+    }
+}
